@@ -1,0 +1,47 @@
+//JSON Data Types
+//1. String
+{"firstName":"Sakshi"}
+
+//2.Number
+{"age":22}
+
+//3.JSON Object
+{
+"student":{"firstName":"Sakshi", "age":22, "country":"India"}
+}
+
+//4.Array
+{
+"students":["Sakshi", "Ananya","Riddhi"]
+}
+
+//5.boolean
+{"isValid":true}
+
+
+//JSON Objects
+var sakshi = {
+  "name" : "Sakshi Shinde",
+  "age" : "22",
+  "website" : "beginnersbook"
+};
+
+
+//JSON objects in array
+var students = [{
+   "name" : "Ananya",
+   "age" :  "21",
+   "gender" : "female"
+
+},
+{
+   "name" : "Riddhi",
+   "age" : "22",
+   "gender" : "female"
+
+},
+{
+   "name" : "Srushti",
+   "age" : "20",
+   "gender" : "female"
+}];
