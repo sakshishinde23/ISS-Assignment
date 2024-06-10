@@ -1,0 +1,19 @@
+package com.mywebapp;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DatabaseConnection {
+    public static Connection initializeDatabase() throws SQLException, ClassNotFoundException {
+        String dbDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        String dbURL = "jdbc:sqlserver://localhost:1433";
+        String dbName = "UserDB";
+        String dbUsername = "your_db_username";
+        String dbPassword = "your_db_password";
+
+        Class.forName(dbDriver);
+        Connection connection = DriverManager.getConnection(dbURL + ";databaseName=" + dbName, dbUsername, dbPassword);
+        return connection;
+    }
+}

@@ -1,0 +1,42 @@
+package com.mywebapp;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class DatabaseConnection {
+    private static final Logger LOGGER = Logger.getLogger(DatabaseConnection.class.getName());
+
+    public static Connection initializeDatabase() throws SQLException, ClassNotFoundException {
+        String dbDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        String dbURL = "jdbc:sqlserver://localhost:1433";
+        String dbName = "UserDB";
+        String dbUsername = "your_db_username";
+        String dbPassword = "your_db_password";
+
+        // Logging database connection details (careful with logging sensitive information like passwords in production environments)
+        LOGGER.log(Level.INFO, "Connecting to database URL: {0}", dbURL);
+        LOGGER.log(Level.INFO, "Database Name: {0}", dbName);
+        LOGGER.log(Level.INFO, "Database User: {0}", dbUsername);
+
+        // Enable trustServerCertificate
+        String connectionOptions = ";databaseName=" + dbName + ";trustServerCertificate=true";
+
+        Connection connection = null;
+        try {
+            Class.forName(dbDriver);
+            connection = DriverManager.getConnection(dbURL + connectionOptions, dbUsername, dbPassword);
+            LOGGER.info("Database connection successfully established.");
+        } catch (ClassNotFoundException e) {
+            LOGGER.log(Level.SEVERE, "Database Driver Class Not Found: ", e);
+            throw e;
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "SQL Exception while establishing connection: ", e);
+            throw e;
+        }
+
+        return connection;
+    }
+}

@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <script>
+        function validateForm() {
+            var username = document.forms["registerForm"]["username"].value;
+            var password = document.forms["registerForm"]["password"].value;
+            if (username == "" || password == "") {
+                alert("Username and password must be filled out");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Register</h2>
+    <form name="registerForm" action="RegisterServlet" method="post" onsubmit="return validateForm()">
+        Username: <input type="text" name="username"><br>
+        Password: <input type="password" name="password"><br>
+        <input type="submit" value="Register">
+    </form>
+    <p>${errorMessage}</p>
+</body>
+</html>
