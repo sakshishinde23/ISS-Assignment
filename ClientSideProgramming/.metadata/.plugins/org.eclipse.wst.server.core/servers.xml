@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v10.1 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v10.1 Server at localhost" name="Tomcat v10.1 Server at localhost" runtime-id="apache-tomcat-10.1.19" server-type="org.eclipse.jst.server.tomcat.101" server-type-id="org.eclipse.jst.server.tomcat.101" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="1"/>
+  <server hostname="localhost" id="HTTP Server at localhost" isPublishing="true" name="HTTP Server at localhost" port="80" runtime-id="HTTP Server" server-type="org.eclipse.wst.server.http.server" server-type-id="org.eclipse.wst.server.http.server" start-timeout="240" stop-timeout="240" timestamp="1" urlPrefix="">
+    <list key="modules" value0="FormDemo::org.eclipse.wst.web.internal.deployables.static:FormDemo::wst.web::1.0"/>
+  </server>
+  <server hostname="localhost" id="HTTP Preview at localhost" name="HTTP Preview at localhost" runtime-id="HTTP Preview" server-type="org.eclipse.wst.server.preview.server" server-type-id="org.eclipse.wst.server.preview.server" start-timeout="240" stop-timeout="240" timestamp="1">
+    <list key="modules" value0="FormDemo::org.eclipse.wst.web.internal.deployables.static:FormDemo::wst.web::1.0"/>
+  </server>
+</servers>

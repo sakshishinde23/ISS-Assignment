@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Demo</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Form Demo</h2>
+        <form id="demoForm" novalidate>
+            <div class="form-group">
+                <label for="textInput">Text Input:</label>
+                <input type="text" class="form-control" id="textInput" required>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="emailInput">Email Input:</label>
+                <input type="email" class="form-control" id="emailInput" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="form-group">
+                <label for="passwordInput">Password Input:</label>
+                <input type="password" class="form-control" id="passwordInput" required>
+                <div class="invalid-feedback">Please enter a password.</div>
+            </div>
+            <div class="form-group">
+                <label for="numberInput">Number Input:</label>
+                <input type="number" class="form-control" id="numberInput" required>
+                <div class="invalid-feedback">Please enter a number.</div>
+            </div>
+            <div class="form-group">
+                <label for="dateInput">Date Input:</label>
+                <input type="date" class="form-control" id="dateInput" required>
+                <div class="invalid-feedback">Please enter a date.</div>
+            </div>
+            <div class="form-group">
+                <label for="fileInput">File Input:</label>
+                <input type="file" class="form-control-file" id="fileInput" required>
+                <div class="invalid-feedback">Please select a file.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript for form validation using Bootstrap
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+</html>
