@@ -45,7 +45,7 @@ class Vehicle {
 }
 
 public class Constructor {
-    private static final Logger logger = LogManager.getLogger(Constructor.class);
+    
 
     public static void main(String[] args) {
         // Create instance using default constructor
